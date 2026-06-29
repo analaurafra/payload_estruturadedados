@@ -30,4 +30,8 @@ These documents are intended to support development and testing of document gene
 - File names are primarily in Portuguese because the examples target Brazilian document formats.
 - Use the JSON and JS payload files to populate the corresponding HTML templates when generating final documents.
 - Output HTML files show example rendered results for the payload/template combinations.
+- The following tools are used for editing and validating payloads and templates:
+  - https://jsonlint.com/
+  - https://jsoncrack.com/editor
+  - https://handlebarsjs.com/examples
 
