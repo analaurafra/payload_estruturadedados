@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Output — Contrato de Abertura de Conta</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #222; margin: 20px; }
+    .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 10px; }
+    .section { margin-top: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    table, th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f5f5f5; }
+    .alert { background: #fff3cd; border-left: 6px solid #ffc107; padding: 12px; margin: 12px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>CONTRATO DE ABERTURA DE CONTA DIGITAL</h1>
+    <p><strong>Fintech Parceira:</strong> Banco Bamerindus &nbsp;|&nbsp; <strong>Proposta:</strong> PROP-2026-XYZ &nbsp;|&nbsp; <strong>Data:</strong> 15/04/2026</p>
+  </div>
+
+  <div class="section">
+    <h2>1. Qualificação da Empresa</h2>
+    <p>Pelo presente instrumento, a empresa <strong>Technet LTDA</strong>, inscrita no CNPJ sob o nº <strong>12.345.678/0001-99</strong>, solicita a abertura de conta na modalidade <strong>Conta Corrente Digital PJ</strong>.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Sócios e Representantes Legais</h2>
+    <p>Ficam qualificados e autorizados a responder pela empresa os seguintes sócios/representantes:</p>
+    <ul>
+      <li><strong>Nome:</strong> José Mario da Silva<br><strong>CPF:</strong> 369.528.741-00 &nbsp;|&nbsp; <strong>Cargo:</strong> Engenheiro Civil &nbsp;|&nbsp; <strong>Participação:</strong> 50.0%</li>
+      <li><strong>Nome:</strong> Larissa Manuela Silva<br><strong>CPF:</strong> 369.528.741-02 &nbsp;|&nbsp; <strong>Cargo:</strong> Nutricionista &nbsp;|&nbsp; <strong>Participação:</strong> 30.0%</li>
+      <li><strong>Nome:</strong> José Mario da Silva Junior<br><strong>CPF:</strong> 369.528.741-03 &nbsp;|&nbsp; <strong>Cargo:</strong> Engenheiro de Software &nbsp;|&nbsp; <strong>Participação:</strong> 20.0%</li>
+    </ul>
+  </div>
+
+  <!-- Conditional: assinatura conjunta -->
+  <div class="section">
+    <h2>Cláusulas Condicionais</h2>
+    
+    <!-- Show alert because legenda is 'Sim' in payload -->
+    <div class="alert">
+      <strong>⚠️ CLÁUSULA RESTRITIVA DE MOVIMENTAÇÃO:</strong>
+      <p>Considerando que a resposta para Assinatura Conjunta é <strong>"Sim"</strong>, fica estabelecido que a movimentação desta conta corrente PJ e a aprovação de transações financeiras dependerão, obrigatoriamente, da assinatura e anuência mútua de mais de um sócio administrador qualificado no item 2.</p>
+    </div>
+
+    <p><strong>Permite cartão de crédito pré-aprovado:</strong> Não</p>
+  </div>
+
+  <div class="section">
+    <h2>3. Tarifas e Limites Contratados</h2>
+    <p>O cliente declara ciência sobre o pacote de serviços contratado:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Pacote</th>
+          <th>Serviço</th>
+          <th>Custo Unitário</th>
+          <th>Limite Diário</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vip</td>
+          <td>Transferência Pix</td>
+          <td>00.00</td>
+          <td>R$ 50000.00</td>
+        </tr>
+        <tr>
+          <td>Vip</td>
+          <td>Emissão de Boletos</td>
+          <td>R$1.00</td>
+          <td>Sem Limite Estipulado</td>
+        </tr>
+        <tr>
+          <td>Vip</td>
+          <td>Saque Banco 24 Horas</td>
+          <td>R$6,50</td>
+          <td>R$ 2000.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section" style="margin-top:30px; font-size:0.9em; color:#555;">
+    <p>Documento gerado a partir do payload: <em>abeturaContaPayload.js</em></p>
+  </div>
+
+</body>
+</html>

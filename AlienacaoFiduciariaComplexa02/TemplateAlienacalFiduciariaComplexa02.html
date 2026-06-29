@@ -1,0 +1,80 @@
+<!-- ======================================================== -->
+<!-- TEMPLATE HANDLEBARS: ALIENÇÃO FIDUCIÁRIA (VERSÃO FINAL)  -->
+<!-- ======================================================== -->
+<h3>INSTRUMENTO PARTICULAR DE CONSTITUIÇÃO DE GARANTIA FIDUCIÁRIA</h3>
+
+<p>
+    <strong>CONTRATO Nº:</strong> {{dadosDoContrato.idDoContrato}} | <strong>EMISSÃO:</strong> {{dadosDoContrato.dataEmissaoContrato}}<br>
+    <strong>VALOR TOTAL DO CRÉDITO:</strong> R$ {{dadosDoContrato.valorTotalCredito}}
+</p>
+
+<hr>
+
+<p>
+    <strong>DEVEDOR PRINCIPAL:</strong> {{dadosDoDevedor.razaoSocialDevedor}}, inscrito no CNPJ sob o nº {{dadosDoDevedor.cnpjDevedor}}, com sede na {{dadosDoDevedor.enderecoDevedor}}, nº {{dadosDoDevedor.numedoDevedor}}, {{dadosDoDevedor.complementoDevedor}}, Bairro {{dadosDoDevedor.bairroDevedor}}, na cidade de {{dadosDoDevedor.cidadeDevedor}}/{{dadosDoDevedor.ufDevedor}}, CEP: {{dadosDoDevedor.cepDevedor}}.
+</p>
+
+<h4>DO(S) FIDUCIANTE(S) GARANTIDOR(ES) E SEUS CÔNJUGES/REPRESENTANTES:</h4>
+{{#each dadosFiducianteGarantidor}}
+    
+    <!-- BLOCO PESSOA JURÍDICA -->
+    {{#if ../legendaCondicional.fiduciantePJ}}
+        {{#if cnpjFiducianteGarantidor}}
+        <p>
+            <strong>Fiduciante (Pessoa Jurídica):</strong> {{razaoSocialFiducianteGarantidor}}, inscrita no CNPJ sob o nº {{cnpjFiducianteGarantidor}}, com sede na {{enderecoFiducianteGarantidor}}, nº {{numeroFiducianteGarantidor}}, Bairro {{bairroFiducianteGarantidor}}, {{cidadeFiducianteGarantidor}}/{{ufFiducianteGarantidor}}, neste ato representada por seu(s) administrador(es)/procurador(es) legal(is): {{nomeFiducianteGarantidor}}, de nacionalidade {{nacionalidadeFiducianteGarantidor}}, profissão {{profissaoFiducianteGarantidor}}, portador do RG nº {{rgFiducianteGarantidor}} e inscrito no CPF sob o nº {{cpfFiucianteGarantidor}}.
+        </p>
+        {{/if}}
+    {{/if}}
+
+    <!-- BLOCO PESSOA FÍSICA -->
+    {{#if ../legendaCondicional.fiduciantePF}}
+        {{#unless cnpjFiducianteGarantidor}}
+        <p>
+            <strong>Fiduciante (Pessoa Física):</strong> {{nomeFiducianteGarantidor}}, de nacionalidade {{nacionalidadeFiducianteGarantidor}}, profissão {{profissaoFiducianteGarantidor}}, portador do RG nº {{rgFiducianteGarantidor}} e inscrito no CPF sob o nº {{cpfFiucianteGarantidor}}, residente e domiciliado na {{enderecoFiducianteGarantidor}}, nº {{numeroFiducianteGarantidor}}, Bairro {{bairroFiducianteGarantidor}}, {{cidadeFiducianteGarantidor}}/{{ufFiducianteGarantidor}}, Estado Civil: <strong>{{estadoCivilFiducianteGarantidor}}</strong>{{#if regimeDeBensFiducianteGarantidor}} sob o regime de {{regimeDeBensFiducianteGarantidor}}{{/if}}.
+        </p>
+
+            <!-- SUB-CONDICIONAL: ANUÊNCIA DO CÔNJUGE (OUTORGA UXÓRIA) -->
+            {{#if ../legendaCondicional.assinaturaConjuge}}
+                <!-- Só exibe a outorga se o participante possuir regime de bens (ou seja, for casado) -->
+                {{#if regimeDeBensFiducianteGarantidor}}
+                <div class="box-conjuge" style="padding: 15px; border-left: 4px solid #eab308; background-color: #fefce8; margin: 15px 0; border-radius: 0 6px 6px 0;">
+                    <strong>DA ANUÊNCIA OBRIGATÓRIA DO CÔNJUGE (OUTORGA UXÓRIA):</strong> <br>
+                    Neste ato, para a plena validade da garantia nos termos do Art. 1.647 do Código Civil, comparece também como <strong>CÔNJUGE ANUENTE</strong> do(a) fiduciante acima qualificado(a): <strong>{{../dadosDoConjuge.nomeConjunge}}</strong>, portador(a) do RG nº {{../dadosDoConjuge.rgConjuge}} {{../dadosDoConjuge.orgaoEmissorConjuge}} e inscrito(a) no CPF sob o nº {{../dadosDoConjuge.cpf}}.
+                    <br><br>
+                    <strong>DIREITOS E DEVERES DO CÔNJUGE CONFORME O REGIME DE BENS:</strong>
+                    <p style="font-size: 13px; margin: 5px 0 0 0;">
+                        <em>Parágrafo Único (Dever de Conservação e Solidariedade):</em> O <strong>CÔNJUGE ANUENTE</strong> formalmente reconhece e aceita os termos desta alienação fiduciária e, sob o regime de {{regimeDeBensFiducianteGarantidor}}, assume o dever recíproco de zelar pela integridade do bem, respondendo pelas obrigações decorrentes desta garantia.
+                    </p>
+                </div>
+                {{/if}}
+            {{/if}}
+        {{/unless}}
+    {{/if}}
+
+{{/each}}
+
+<hr>
+
+<p><strong>CREDOR FIDUCIÁRIO:</strong> <strong>{{credorFiduciario.nomeCredorFiduciario}}</strong>, doravante denominado simplesmente Credor.</p>
+
+<h4>CLÁUSULA PRIMEIRA - DA GARANTIA FIDUCIÁRIA DOS BENS</h4>
+<p>Em garantia ao cumprimento integral de todas as obrigações financeiras deste instrumento, os Fiduciantes alienam ao Credor os seguintes imóveis de suas propriedades:</p>
+
+{{#each dadosDoBem}}
+<div class="box-bem" style="margin-bottom: 15px; padding: 15px; border: 1px solid #e2e8f0; background-color: #f8fafc; border-radius: 6px;">
+    <strong>Tipo do Bem:</strong> {{tipoDoBem}} <br>
+    <strong>Descrição Legal:</strong> {{descricaoLegal}} <br>
+    <strong>Localização:</strong> {{localizaçãoDoBem}}, nº {{numeroDoBem}} - {{cidadeDoBem}}/{{ufDoBem}}, CEP: {{cepDoBem}} <br>
+    <strong>Registro Imobiliário:</strong> Matriculado sob o nº <strong>{{matriculaDoBem}}</strong> perante o <strong>{{nomeDoCartorioDoBem}}</strong> da Comarca de {{ComarcaDoBem}}.
+</div>
+{{/each}}
+
+<hr>
+
+<!-- REGRA CONDICIONAL: NOTIFICAÇÃO ATIVA -->
+{{#if legendaCondicional.envioNoticacaoJudicial}}
+<h4>CLÁUSULA SEGUNDA - DA INADIMPLÊNCIA E CONSOLIDAÇÃO</h4>
+<p>
+    Ocorrendo a impontualidade no pagamento de qualquer parcela do empréstimo aqui pactuado, fica o Credor Fiduciário expressamente autorizado a acionar o competente <strong>{{dadosDoBem.0.nomeDoCartorioDoBem}}</strong> da Comarca de <strong>{{dadosDoBem.0.ComarcaDoBem}}</strong> para intimar os devedores, fiduciantes (e seus respectivos cônjuges anuentes ou representantes legais) a purgarem a mora, sob pena de consolidação da propriedade do imóvel em nome do banco.
+</p>
+{{/if}}

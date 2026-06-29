@@ -1,0 +1,95 @@
+{
+    "dadosDoContrato": {
+        "idDoContrato": "123456",
+        "dataEmissaoContrato": "12/06/1988",
+        "valorTotalCredito": "400000000"
+    },
+    "dadosDoDevedor": {
+        "razaoSocialDevedor": "Chris Flores LTDA",
+        "cnpjDevedor": "2.233.547/0001-12",
+        "enderecoDevedor": "Rua Prefeito José",
+        "numedoDevedor": "78",
+        "complementoDevedor": "Torre 10",
+        "bairroDevedor": "Vila Nova",
+        "cidadeDevedor": "Campinas",
+        "ufDevedor": "SP",
+        "cepDevedor": "13960-000"
+    },
+     "dadosDoConjuge":{
+        "nomeConjunge": "Maurício de Oliveira",
+        "rgConjuge": "30.458.789-00",
+        "orgaoEmissorConjuge": "SSP-SP",
+        "cpf": "459.963.875-78"
+    },
+    "credorFiduciario": {
+        "nomeCredorFiduciario": "Banco Itatiaia"
+    },
+    "dadosFiducianteGarantidor": [
+        {
+        "tipoFiducianteGarantidor": "Pessoa Jurídica",  
+        "razaoSocialFiducianteGarantidor": "Aramis LTDA",
+        "cnpjFiducianteGarantidor": "12.233.547/0001-12",
+        "enderecoFiducianteGarantidor": "Rua das Bromélias",
+        "numeroFiducianteGarantidor": "78",
+        "bairroFiducianteGarantidor": "Vila Marinile",
+        "cidadeFiducianteGarantidor": "Mogi das Cruzes",
+        "ufFiducianteGarantidor": "SP",
+        "nomeFiducianteGarantidor": "Amarilis Luiza de Jesus",
+        "nacionalidadeFiducianteGarantidor": "Brasileira",
+        "profissaoFiducianteGarantidor": "Empreendedora",
+        "rgFiducianteGarantidor": "24.789.852-00",
+        "cpfFiucianteGarantidor": "369.202.895-77",
+        "estadoCivilFiducianteGarantidor": "Casada",
+        "regimeDeBensFiducianteGarantidor": "Comunhão Parcial de Bens"
+        },
+        {
+        "tipoFiducianteGarantidor": "Pessoa Física",  
+        "razaoSocialFiducianteGarantidor": "",
+        "cnpjFiducianteGarantidor": "",
+        "enderecoFiducianteGarantidor": "Rua das Bromélias",
+        "numeroFiducianteGarantidor": "78",
+        "bairroFiducianteGarantidor": "Vila Marinile",
+        "cidadeFiducianteGarantidor": "Mogi das Cruzes",
+        "ufFiducianteGarantidor": "SP",
+        "nomeFiducianteGarantidor": "Luiza Sales de Jesus",
+        "nacionalidadeFiducianteGarantidor": "Brasileira",
+        "profissaoFiducianteGarantidor": "Dona de Casa",
+        "rgFiducianteGarantidor": "24.789.852-00",
+        "cpfFiucianteGarantidor": "369.202.895-77",
+        "estadoCivilFiducianteGarantidor": "Solteira",
+        "regimeDeBensFiducianteGarantidor": ""
+        }
+    ],
+    "dadosDoBem": [{
+        "tipoDoBem": "Casa Residêncial",
+        "descricaoLegal": "Casa Residencial de 300 metro quadrados de construção em condomínio fechado.",
+        "localizaçãoDoBem": "Condomínio Chácaras de São Pedro",
+        "numeroDoBem": "456",
+        "cidadeDoBem": "Ubatuba",
+        "ufDoBem": "SP",
+        "cepDoBem": "13489-00",
+        "matriculaDoBem": "456789-55",
+        "nomeDoCartorioDoBem": "Cartório Imóves do Sul",
+        "ComarcaDoBem": "São Vicente"
+        },
+        {
+        "tipoDoBem": "Sala Comercial",
+        "descricaoLegal": "Oficina Mecânica especializa",
+        "localizaçãoDoBem": "Vila Prudente",
+        "numeroDoBem": "12369",
+        "cidadeDoBem": "Ubatuba",
+        "ufDoBem": "SP",
+        "cepDoBem": "12345-00",
+        "matriculaDoBem": "4789654-00",
+        "nomeDoCartorioDoBem": "Cartório Imóves do Sul",
+        "ComarcaDoBem": "São Vicente"
+        }
+    ],
+    "legendaCondicional": {
+        "fiduciantePJ": true,
+        "fiduciantePF":true,
+        "fiducianteGarantidorPJ": false,
+        "assinaturaConjuge": true,
+        "envioNoticacaoJudicial": true
+    }
+}
