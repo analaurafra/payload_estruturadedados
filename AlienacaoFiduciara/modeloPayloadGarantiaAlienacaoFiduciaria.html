@@ -1,0 +1,68 @@
+
+<!-- Template de Modelo de Contrato - https://jsonlint.com/ + https://jsoncrack.com/editor + https://handlebarsjs.com/examples -->
+
+<!-- INSTRUMENTO PARTICULAR DE CCB COM GARANTIA DE ALIENAÇÃO FIDUCIÁRIA  -->
+
+<!-- VARIÁVEIS SIMPLES: Buscando direto da raiz do JSON -->
+<strong>DATA DE REFERÊNCIA:</strong> {{dataAtual}}<br>
+<strong>VALOR DA OPERAÇÃO:</strong> R$ {{valorEmprestimo}}<br>
+
+<hr>
+
+<!-- ACESSANDO O OBJETO DO CREDOR -->
+<strong>CREDOR FIDUCIÁRIO:</strong> {{credorFiduciario.nomeCredorFiduciario}}, CNPJ nº {{credorFiduciario.cnpjCredorFiduciario}}.<br>
+
+<!-- ACESSANDO O OBJETO DEVEDOR QUE ESTÁ DENTRO DO CREDOR -->
+<strong>DEVEDOR PRINCIPAL:</strong> {{credorFiduciario.dadosDevedor.razaoSocialDevedor}}, CNPJ nº {{credorFiduciario.dadosDevedor.cnpjDevedor}}.<br>
+<strong>INTERVENIENTE FIDICUANTE:</strong> {{credorFiduciario.dadosDevedor.dadosFiducianteGarantidor}}<br>
+
+<br>
+<strong>REPRESENTANTES LEGAIS DO DEVEDOR:</strong>
+<!-- REPETIÇÃO: Array de Representantes dentro de credorFiduciario -->
+<ul>
+    {{#each credorFiduciario.dadosRepresentates}}
+        <li>{{nomeRepresentante}} (CPF: {{cpfRepresentante}}) - Cargo: {{cargoRepresentante}}</li>
+    {{/each}}
+</ul>
+
+<hr>
+
+<h4>CLÁUSULA QUARTA – DOS BENS ALIENADOS EM GARANTIA</h4>
+<p>Em garantia da dívida, ficam alienados fiduciariamente os seguintes bens cadastrados no sistema:</p>
+
+<!-- REPETIÇÃO: Tabela dinâmica para listar os 3 bens do seu array -->
+<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <th>Tipo</th>
+            <th>Descrição</th>
+            <th>Matrícula</th>
+            <th>Cartório</th>
+            <th>Avaliação</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each credorFiduciario.dadosBens}}
+        <tr>
+            <td>{{tipoDoBem}}</td>
+            <td>{{descricaoDoBem}}</td>
+            <td>{{matriculadoBem}}</td>
+            <td>{{nomeCartorioBem}}</td>
+            <td>R$ {{valorAvaliacaoBem}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<hr>
+
+<!-- CONDICIONAL PAI: Se o credor acionar a flag de inadimplência -->
+{{#if credorFiduciario.legendaCondicional.credorInadimplente}}
+    <h4>CLÁUSULA QUINTA – DA INADIMPLÊNCIA E MORA</h4>
+    <p>O Devedor encontra-se em estado de inadimplência há <strong>{{diasEmAtraso}} dias</strong>.</p>
+
+    <!-- CONDICIONAL FILHO: Se a flag de notificação de cartório também for verdadeira -->
+    {{#if credorFiduciario.legendaCondicional.notificacaoDeInadimplencia}}
+        <p><strong>Parágrafo Único (Execução Extrajudicial):</strong> O Credor fica desde já autorizado a intimar o fiduciante <strong>{{credorFiduciario.dadosDevedor.dadosFiducianteGarantidor}}</strong> por intermédio do <strong>{{credorFiduciario.dadosBens.0.nomeCartorioBem}}</strong> para consolidação da propriedade dos bens acima listados.</p>
+    {{/if}}
+{{/if}}

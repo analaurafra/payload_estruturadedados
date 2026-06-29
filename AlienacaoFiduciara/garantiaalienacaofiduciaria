@@ -1,0 +1,58 @@
+{
+    "valorEmprestimo": 1.00000000,
+    "diasEmAtraso": 90,
+    "dataAtual": "25/06/2026",
+    "credorFiduciario": {
+        "nomeCredorFiduciario": "Banco Paranauê",
+        "cnpjCredorFiduciario": "20.345.678/0001-99",
+        "dadosDevedor": {
+            "razaoSocialDevedor": "Techtool LTDA",
+            "cnpjDevedor": "20.345.678/0001-99",
+            "dadosFiducianteGarantidor": "Luiz da Gama"
+        },
+        "dadosRepresentates": [
+            {
+                "nomeRepresentante": "Luiz da Gama",
+                "cpfRepresentante": "369.456.789-00",
+                "cargoRepresentante": "Diretor Executivo"
+            },
+            {
+                "nomeRepresentante": "Mariana Perez",
+                "cpfRepresentante": "369.456.789-01",
+                "cargoRepresentante": "Diretora de Logística"
+            },
+            {
+                "nomeRepresentante": "Laura Mendez",
+                "cpfRepresentante": "369.456.789-0120",
+                "cargoRepresentante": "Gerente Operacional"
+            }
+        ],
+        "dadosBens": [
+            {
+                "tipoDoBem": "Imóvel Comercial",
+                "descricaoDoBem": "Salas Comercias para constituição de clínicas médicas",
+                "matriculadoBem": "012365478-00",
+                "nomeCartorioBem": "Cartorio de Imóveis Comercias e Rurais",
+                "valorAvaliacaoBem": "20000000.0"
+            },
+            {
+                "tipoDoBem": "Prédio Comercial",
+                "descricaoDoBem": "Prédio Comercial localizado em barrio Industrial",
+                "matriculadoBem": "00000369",
+                "nomeCartorioBem": "Cartorio de Imóveis Comercias e Rurais",
+                "valorAvaliacaoBem": "30000000.0"
+            },
+            {
+                "tipoDoBem": "Imóvel Comercial",
+                "descricaoDoBem": "Salas Comercias para constituição de clínicas médicas",
+                "matriculadoBem": "012365478-10",
+                "nomeCartorioBem": "Cartorio de Imóveis Comercias e Rurais",
+                "valorAvaliacaoBem": "40000000.0"
+            }
+        ],
+        "legendaCondicional": {
+            "credorInadimplente": true,
+            "notificacaoDeInadimplencia": true
+        }
+    }
+}

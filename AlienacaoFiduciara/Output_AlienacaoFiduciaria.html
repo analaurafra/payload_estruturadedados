@@ -1,0 +1,71 @@
+<!-- VARIÁVEIS SIMPLES: Buscando direto da raiz do JSON -->
+<strong>DATA DE REFERÊNCIA:</strong> 25/06/2026<br>
+<strong>VALOR DA OPERAÇÃO:</strong> R$ 1<br>
+
+<hr>
+
+<!-- ACESSANDO O OBJETO DO CREDOR -->
+<strong>CREDOR FIDUCIÁRIO:</strong> Banco Paranauê, CNPJ nº 20.345.678/0001-99.<br>
+
+<!-- ACESSANDO O OBJETO DEVEDOR QUE ESTÁ DENTRO DO CREDOR -->
+<strong>DEVEDOR PRINCIPAL:</strong> Techtool LTDA, CNPJ nº 20.345.678/0001-99.<br>
+<strong>INTERVENIENTE FIDICUANTE:</strong> Luiz da Gama<br>
+
+<br>
+<strong>REPRESENTANTES LEGAIS DO DEVEDOR:</strong>
+<!-- REPETIÇÃO: Array de Representantes dentro de credorFiduciario -->
+<ul>
+        <li>Luiz da Gama (CPF: 369.456.789-00) - Cargo: Diretor Executivo</li>
+        <li>Mariana Perez (CPF: 369.456.789-01) - Cargo: Diretora de Logística</li>
+        <li>Laura Mendez (CPF: 369.456.789-0120) - Cargo: Gerente Operacional</li>
+</ul>
+
+<hr>
+
+<h4>CLÁUSULA QUARTA – DOS BENS ALIENADOS EM GARANTIA</h4>
+<p>Em garantia da dívida, ficam alienados fiduciariamente os seguintes bens cadastrados no sistema:</p>
+
+<!-- REPETIÇÃO: Tabela dinâmica para listar os 3 bens do seu array -->
+<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <th>Tipo</th>
+            <th>Descrição</th>
+            <th>Matrícula</th>
+            <th>Cartório</th>
+            <th>Avaliação</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Imóvel Comercial</td>
+            <td>Salas Comercias para constituição de clínicas médicas</td>
+            <td>012365478-00</td>
+            <td>Cartorio de Imóveis Comercias e Rurais</td>
+            <td>R$ 20000000.0</td>
+        </tr>
+        <tr>
+            <td>Prédio Comercial</td>
+            <td>Prédio Comercial localizado em barrio Industrial</td>
+            <td>00000369</td>
+            <td>Cartorio de Imóveis Comercias e Rurais</td>
+            <td>R$ 30000000.0</td>
+        </tr>
+        <tr>
+            <td>Imóvel Comercial</td>
+            <td>Salas Comercias para constituição de clínicas médicas</td>
+            <td>012365478-10</td>
+            <td>Cartorio de Imóveis Comercias e Rurais</td>
+            <td>R$ 40000000.0</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<!-- CONDICIONAL PAI: Se o credor acionar a flag de inadimplência -->
+    <h4>CLÁUSULA QUINTA – DA INADIMPLÊNCIA E MORA</h4>
+    <p>O Devedor encontra-se em estado de inadimplência há <strong>90 dias</strong>.</p>
+
+    <!-- CONDICIONAL FILHO: Se a flag de notificação de cartório também for verdadeira -->
+        <p><strong>Parágrafo Único (Execução Extrajudicial):</strong> O Credor fica desde já autorizado a intimar o fiduciante <strong>Luiz da Gama</strong> por intermédio do <strong>Cartorio de Imóveis Comercias e Rurais</strong> para consolidação da propriedade dos bens acima listados.</p>

@@ -1,0 +1,57 @@
+### INSTRUMENTO PARTICULAR DE CONSTITUIÇÃO DE GARANTIA FIDUCIÁRIA
+
+<strong>CONTRATO Nº:</strong> {{dadosContrato.idContrato}} | <strong>EMISSÃO:</strong> {{dadosContrato.dataEmissaoContrato}}<br>
+<strong>VALOR TOTAL DO CRÉDITO:</strong> R$ {{dadosContrato.valorEmprestimo}}
+
+<hr>
+
+<!-- DEVEDOR PRINCIPAL -->
+<p>
+  <strong>DEVEDOR PRINCIPAL:</strong> {{dadosDevedorPrincipal.razaoSocialDevedor}}, inscrito no CNPJ sob o nº {{dadosDevedorPrincipal.cnpjDevedor}}, com sede na {{dadosDevedorPrincipal.enderecoLogradouroDevedor}}, nº {{dadosDevedorPrincipal.numeroDevedor}}, {{dadosDevedorPrincipal.complementoDevedor}}, Bairro {{dadosDevedorPrincipal.bairroDevedor}}, na cidade de {{dadosDevedorPrincipal.cidadeDevedor}}/{{dadosDevedorPrincipal.ufDevedor}}, CEP: {{dadosDevedorPrincipal.cepDevedor}}.
+</p>
+
+<!-- LOOP DOS FIDUCIANTES -->
+<h4>DO(S) FIDUCIANTE(S) GARANTIDOR(ES):</h4>
+{{#each dadosFiducianteGarantidor}}
+<p>
+  <strong>Nome:</strong> {{nomeFiducianteGarantidor}}, de nacionalidade {{nacionalidadeFiducianteGarantidor}}, profissão {{profissaoFiducianteGarantidor}}, portador do RG nº {{rgFiducianteGarantidor}} e inscrito no CPF sob o nº {{cpfFiducianteGarantidor}}, residente e domiciliado na {{enderecoFiducianteGarantidor}}, nº {{numeroFiducianteGarantidor}}, Bairro {{bairroFiducianteGarantidor}}, {{cidadeFiducianteGarantidor}}/{{ufFiducianteGarantidor}}, Estado Civil: <strong>{{estadoCivilFiducianteGarantidor}}</strong>{{#if regimeDeBensFiducianteGarantidor}}, sob o regime de {{regimeDeBensFiducianteGarantidor}}{{/if}}.
+</p>
+
+  <!-- CONDICIONAL PROTEGIDA: Só imprime se a legenda global exigir E o fiduciante for casado -->
+  {{#if ../legendaCondicional.assinaturaConjuge}}
+    {{#if (orgaoEmissorConjuge)}} <!-- Verifica se há dados de cônjuge no payload global -->
+      <!-- O sistema só imprime o bloco abaixo para a Ana Luiza, pois o Lázaro está como Solteiro -->
+      {{#if (eq estadoCivilFiducianteGarantidor "Casada")}}
+      <div style="padding-left: 20px; border-left: 3px solid #ffc107; margin-bottom: 15px;">
+        <strong>DA ANUÊNCIA OBRIGATÓRIA DO CÔNJUGE:</strong> <br>
+        Neste ato, para a plena validade da garantia, comparece também como anuente o cônjuge do(a) fiduciante acima nominado(a): <strong>{{../dadosConjuge.nomeConjuge}}</strong>, portador(a) do RG nº {{../dadosConjuge.rgConjuge}} {{../dadosConjuge.orgaoEmissorConjuge}} e inscrito(a) no CPF sob o nº {{../dadosConjuge.cpfConjuge}}.
+      </div>
+      {{/if}}
+    {{/if}}
+  {{/if}}
+{{/each}}
+
+<hr>
+
+<!-- LOOP DOS BENS IMÓVEIS -->
+<h4>CLÁUSULA PRIMEIRA - DA GARANTIA FIDUCIÁRIA DOS BENS</h4>
+<p>Os Fiduciantes alienam ao <strong>{{dadosCredorFiduciario.nomeCredorFiduciario}}</strong> os seguintes bens de sua propriedade:</p>
+
+{{#each dadosDosBens}}
+<div style="margin-bottom: 15px; padding: 10px; border: 1px solid #ddd;">
+  <strong>Tipo do Bem:</strong> {{tipodoBem}} <br>
+  <strong>Descrição Legal:</strong> {{descricaoDoBem}} <br>
+  <strong>Localização:</strong> {{logradouroDoBem}}, nº {{numeroDoBem}} - {{cidadeDoBem}}/{{ufDoBem}}, CEP: {{cepDoBem}} <br>
+  <strong>Registro:</strong> Matriculado sob o nº <strong>{{matriculaDoBem}}</strong> perante o <strong>{{nomeDoCartorioDoBem}}</strong> da Comarca de {{comarcaDoBem}}.
+</div>
+{{/each}}
+
+<hr>
+
+<!-- CONDICIONAL DE NOTIFICAÇÃO -->
+{{#if legendaCondicional.notificacaoCartorioAtiva}}
+<h4>CLÁUSULA SEGUNDA - DA CONSOLIDAÇÃO DA PROPRIEDADE</h4>
+<p>
+  Fica o Credor Fiduciário autorizado a acionar o competente Cartório de Registro de Imóveis para executar as notificações cabíveis em caso de inadimplemento das obrigações decorrentes deste instrumento.
+</p>
+{{/if}}

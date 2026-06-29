@@ -1,0 +1,87 @@
+{
+    "dadosContrato": {
+        "idContrato": "0002369",
+        "dataEmissaoContrato": "12/05/2025",
+        "valorEmprestimo": "5000000000"
+    },
+    "dadosDevedorPrincipal": {
+        "razaoSocialDevedor": "Paulitech e Associados",
+        "cnpjDevedor": "12.233.547/0001-12",
+        "enderecoLogradouroDevedor": "Rua Marques de Sapucaí",
+        "numeroDevedor": "75",
+        "complementoDevedor": "Bloco D",
+        "bairroDevedor": "Vila Mariana",
+        "cidadeDevedor": "São Paulo",
+        "ufDevedor": "SP",
+        "cepDevedor": "123456-000"
+    },
+    "dadosConjuge": {
+        "nomeConjuge": "Victor Hugo Silva",
+        "rgConjuge": "12.45.789-33",
+        "orgaoEmissorConjuge": "SSP-SP",
+        "cpfConjuge": "369.456.789-00"
+    },
+    "dadosCredorFiduciario": {
+        "nomeCredorFiduciario": "Banco Tio Patinhas"
+    },
+    "dadosDosBens": [
+        {
+            "tipodoBem": "Prédio Comercial",
+            "descricaoDoBem": "Prédio comercial com salas e consultórios médicos e estética.",
+            "logradouroDoBem": "Rua da Glória",
+            "numeroDoBem": "789",
+            "cidadeDoBem": "São Paulo",
+            "ufDoBem": "SP",
+            "cepDoBem": "13896-00",
+            "matriculaDoBem": "123456789-00",
+            "nomeDoCartorioDoBem": "Cartório de Registro de Móveis",
+            "comarcaDoBem": "São Paulo"
+        },
+        {
+            "tipodoBem": "Sala Comercial",
+            "descricaoDoBem": "Prédio comercial com salas e consultórios médicos e estética.",
+            "logradouroDoBem": "Rua da Maria",
+            "numeroDoBem": "78",
+            "cidadeDoBem": "São João dos Reis",
+            "ufDoBem": "SP",
+            "cepDoBem": "258467-00",
+            "matriculaDoBem": "12345-00",
+            "nomeDoCartorioDoBem": "Cartório de Registro de Móveis São João",
+            "comarcaDoBem": "São Paulo"
+        }
+    ],
+    "dadosFiducianteGarantidor": [
+        {
+            "nomeFiducianteGarantidor": "Lazaro Antônio Dornelles",
+            "nacionalidadeFiducianteGarantidor": "Brasileiro",
+            "profissaoFiducianteGarantidor": "Engenheiro de Dados",
+            "rgFiducianteGarantidor": "24.046.850-99",
+            "cpfFiducianteGarantidor": "369.525.874-00",
+            "enderecoFiducianteGarantidor": "Rua da Paz",
+            "numeroFiducianteGarantidor": "123",
+            "bairroFiducianteGarantidor": "Vila Braga",
+            "cidadeFiducianteGarantidor": "São Luiz do Maranhão",
+            "ufFiducianteGarantidor": "MA",
+            "estadoCivilFiducianteGarantidor": "Solteiro",
+            "regimeDeBensFiducianteGarantidor": ""
+        },
+        {
+            "nomeFiducianteGarantidor": "Ana Luiza Paz",
+            "nacionalidadeFiducianteGarantidor": "Brasileira",
+            "profissaoFiducianteGarantidor": "Médica Clínica Geral",
+            "rgFiducianteGarantidor": "24.046.850-12",
+            "cpfFiducianteGarantidor": "369.525.874-13",
+            "enderecoFiducianteGarantidor": "Rua da Glória",
+            "numeroFiducianteGarantidor": "456",
+            "bairroFiducianteGarantidor": "Vila da Laranja",
+            "cidadeFiducianteGarantidor": "São Paulo",
+            "ufFiducianteGarantidor": "SP",
+            "estadoCivilFiducianteGarantidor": "Casada",
+            "regimeDeBensFiducianteGarantidor": "Comunhão de Bens"
+        }
+    ],
+    "legendaCondicional": {
+        "assinaturaConjuge": true,
+        "notificacaoCartorioAtiva": true
+    }
+}
